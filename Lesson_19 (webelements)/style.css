@@ -1,0 +1,14 @@
+.boxing {
+    border: 3px solid black;
+    margin: auto;
+    width: 400px;
+    height: 200px;
+    overflow: auto;
+    background-color: cornsilk;
+    white-space: nowrap;
+    padding:  10px 0;
+    /* box-sizing: border-box; */
+}
+.box_btn{
+    align-items: center;
+}
