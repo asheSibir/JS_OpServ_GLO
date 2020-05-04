@@ -4,21 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge" chrome="1">
-	<title>Contest about heroes</title>
+    <title>Contest about heroes</title>
+    <style>
+        select{
+            display: block;
+            margin: 1%;
+        }
+        body{
+            background-color: aquamarine;
+        }
+        button{
+            margin-left: 1%;
+        }
+    </style>
 </head>
 <body>
     <section>
         <form id="myForm">
-            <label for="phone">phone</label>
-            <input type="text" id="phone" name="phone" placeholder="phone">
-            <label for="email">email</label>
-            <input type="text" id="email" name="email" placeholder="email">
-            <br>
+            <select id="actor" name="actor">
+                <option value="no">Актер</option>
+            </select>
+            <select id="citizenship" name="citizenship">
+                <option value="citizenship">Национальность</option>
+            </select>
+            <select id="gender" name="gender">
+                <option value="gender">Пол</option>
+            </select>
+            <select id="status" name="status">
+                <option value="status">Статус</option>
+            </select>
             <button type="submit">submit</button>
-            <button type="reset">reset</button>
         </form>
     </section>
-    <div id="output"></div>
+    <div id="output" style="height: auto;"></div>
     <script src="./script.js"></script>
 
 </body>
