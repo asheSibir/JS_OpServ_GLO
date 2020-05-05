@@ -8,9 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const chooseCar = (server) => {
             return new Promise((resolve, reject) => {
                 const request = new XMLHttpRequest();
+                console.dir(request);
                 request.open('GET', server);
                 request.setRequestHeader('Content-type', 'application/json');
+                console.log(request.status);
                 request.send();
+                
             
                 request.addEventListener('readystatechange', () => {
                     if (request.readyState !== 4){
