@@ -12,17 +12,19 @@ cartButton.addEventListener("click", toggleModal);
 close.addEventListener("click", toggleModal);
 
 
-// 1day
+
 const buttonAuth = document.querySelector('.button-auth'),
   modalAuth = document.querySelector('.modal-auth'),
   closeAuth = document.querySelector('.close-auth'),
   logInForm = document.getElementById('logInForm'),
   loginInput = document.getElementById('login'),
   userName = document.querySelector('.user-name'),
-  buttonOut = document.querySelector('.button-out');
+  buttonOut = document.querySelector('.button-out'),
+  cardsRectaurants = document.querySelector('.cards-restaurants'),
+  containerPromo = document.querySelector('.container-promo');
 
 let login = localStorage.getItem('login');
-
+// 1day АВТОРИЗАЦИЯ
 const toggleModalAuth = () => {
   modalAuth.classList.toggle('is-open');
 };
@@ -37,8 +39,7 @@ function authorized() {
     buttonOut.style.display = '';
     buttonOut.removeEventListener('click', logOut);
     checkAuth();
-  }
-  console.log('Авторизован');
+  };
   buttonAuth.style.display = 'none';
   userName.textContent = login;
   userName.style.display = 'inline';
@@ -51,7 +52,7 @@ function nonAuthorized() {
   function logIn(event) {
     event.preventDefault();
     login = loginInput.value;
-    if (!login){
+    if (!login || login.trim() === ''){
       alert('Введите логин!');
     }
     localStorage.setItem('login', login);
@@ -75,6 +76,41 @@ function checkAuth(){
   }
 }
 checkAuth();
+
+// КАРТОЧКИ РЕСТОРАНОВ
+const actingCards = () =>{
+  const createCard = () =>{
+    const card = `
+      <a href="restaurant.html" class="card card-restaurant">
+      <img src="img/pizza-plus/preview.jpg" alt="image" class="card-image"/>
+      <div class="card-text">
+        <div class="card-heading">
+          <h3 class="card-title">Пицца плюс</h3>
+          <span class="card-tag tag">50 мин</span>
+        </div>
+        <div class="card-info">
+          <div class="rating">
+            4.5
+          </div>
+          <div class="price">От 900 ₽</div>
+          <div class="category">Пицца</div>
+        </div>
+      </div>
+      </a>`;
+    cardsRectaurants.insertAdjacentHTML('beforeend', card);
+  };
+  createCard();
+  
+  const openGoods =(event)=> {
+    const target = event.target,
+      restaurant = target.closest('.card-restaurant');
+    if (restaurant){
+
+    }
+     
+  };
+  cardsRectaurants.addEventListener('click', openGoods);
+};
 
 
 
