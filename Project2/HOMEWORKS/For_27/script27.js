@@ -168,7 +168,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     tabContent[i].classList.add('d-none');
                 }
             }
-        }
+        };
         tabHeader.addEventListener('click', (event)=> {
             let target = event.target; //вывели сам объект нажатия
                 target = target.closest('.service-header-tab'); //проверяет селектор, если селектора нет, ищет у родителей и вверх (если не нашел никогда, то Null)
@@ -271,7 +271,7 @@ window.addEventListener('DOMContentLoaded', () => {
     };
     slider();
     // Наша команда, замена фоток (отрабатываем делегирование + dataset)
-    const showDataPhtot = () => {
+    const showDataPhot = () => {
         const command = document.getElementById('command'),
             images = command.querySelectorAll('img');
             let basicPic;
@@ -290,7 +290,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     }  
             });
     };
-    showDataPhtot();
+    showDataPhot();
     // Калькулятор (отрабатываем регулярки, на ограничение ввода)
     const checkData = () => {
         const calcBlock = document.querySelector('.calc-block');
