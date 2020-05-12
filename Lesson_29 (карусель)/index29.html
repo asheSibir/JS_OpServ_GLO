@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge" chrome="1">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/style.min.css">
+	<link rel="stylesheet" href="./css/style.min.css">
+	<link rel="stylesheet" href="./css/style.preloader.css">
+	<link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png">
+	<link rel="manifest" href="./images/favicon/site.webmanifest">
+	<link rel="mask-icon" href="./images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#b91d47">
+    <meta name="theme-color" content="#ffffff">
+  	<title>Карусель</title>
+</head>
+<body>
+    <div class="container">
+        <div id="portfolio" class="portfolio">
+            <div class="container">
+                <h2>Портфолио</h2>
+                <div class="underline"></div>
+                <ul class="portfolio-content" id="all-progects">
+                    <li class="portfolio-item portfolio-item-active"><img src="images/portfilio/portfolio-01.jpg"
+                                                                                                                                alt="portfolio"></li>
+                    <li class="portfolio-item"><img src="images/portfilio/portfolio-04.jpg" alt="portfolio"></li>
+                    <li class="portfolio-item"><img src="images/portfilio/portfolio-06.jpg" alt="portfolio"></li>
+                    <li class="portfolio-item"><img src="images/portfilio/portfolio-07.jpg" alt="portfolio"></li>
+                    <li class="portfolio-item"><img src="images/portfilio/portfolio-08.jpg" alt="portfolio"></li>
+                    <li class="portfolio-item"><img src="images/portfilio/portfolio-10.jpg" alt="portfolio"></li>
+                    <!-- <a href="#" class="portfolio-btn prev" id="arrow-left"></a>
+                    <a href="#" class="portfolio-btn next" id="arrow-right"></a>
+                    <ul class="portfolio-dots">
+                        <li class="dot dot-active"></li>
+                        <li class="dot"></li>
+                        <li class="dot"></li>
+                        <li class="dot"></li>
+                        <li class="dot"></li>
+                        <li class="dot"></li>
+                    </ul> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="companies" class="companies">
+        <div class="container">
+            <h2>Нам доверяют</h2>
+            <div class="underline"></div>
+            <div class="companies-wrapper">
+                <div class="companies-hor">
+                    <div class="companies-hor-item"><img src="images/companies/companies-1.png" alt=""></div>
+                    <div class="companies-hor-item"><img src="images/companies/companies-2.png" alt=""></div>
+                    <div class="companies-hor-item"><img src="images/companies/companies-3.png" alt=""></div>
+                    <div class="companies-hor-item"><img src="images/companies/companies-4.png" alt=""></div>
+                    <div class="companies-hor-item"><img src="images/companies/companies-5.png" alt=""></div>
+                    <div class="companies-hor-item"><img src="images/companies/companies-6.png" alt=""></div>
+                    <div class="companies-hor-item"><img src="images/companies/companies-7.png" alt=""></div>
+                </div>
+                <!-- <button id="left"> < </button>
+                <button id="right"> > </button> -->
+            </div>
+        </div>
+    </div>
+    <script src="./sliderCarousel.js"></script>
+    <script> 
+        const options = { //можно без const, а сразу в скобки конструктора весь объект. Но обязательно! 
+            //Это требование class, чтобы применялось к конкретным элементам
+            main: '.portfolio',
+            wrap: '.portfolio-content'
+        }
+        const carousel = new SliderCarousel(options);
+        carousel.init();
+        const carouselPartners = new SliderCarousel({
+            main: '#companies',
+            wrap: '.companies-hor',
+            // prev: '#left',
+            // next: '#right', 
+            slidesToShow: 4,
+            infinity: true,
+
+            responsive: [{
+                breakpoint: 1024,
+                slidesToShow: 3,
+            },
+            {
+                breakpoint: 768,
+                slidesToShow: 2,
+            },
+            {
+                breakpoint: 576,
+                slidesToShow: 1,
+            }]
+        })
+        carouselPartners.init();
+    </script>
+</body>
+</html>

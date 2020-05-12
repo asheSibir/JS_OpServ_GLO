@@ -10,6 +10,7 @@ import checkData from './modules/checkdataCalc';
 import calc from './modules/calculation';
 import increaseTotal from './modules/calcAnimation';
 import sendForm from './modules/postData';
+import SliderCarousel from './modules/sliderCarousel';
 
 
 //Счетчик
@@ -34,4 +35,6 @@ calc(100);
 increaseTotal();
 // Отправка формы
 sendForm();
+// Карусель для партнеров
+SliderCarousel();
 

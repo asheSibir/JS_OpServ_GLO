@@ -420,11 +420,29 @@
 		</div>
 	</div>
 </div>
-<!-- <script src="./scripts/script18.js"></script> -->
-<!-- <script src="./scripts/firstOPtions.js"></script> -->
-<!-- <script src="./scripts/scriptViaInterval.js"></script> -->
-<!-- <script src="./scripts/scriptModified.js"></script> // это домашка к 18 -->
-<script src="./HOMEWORKS/For_27/script27.js"></script>
+<script src="./dist/main.js"></script>
+<script>
+	const carouselPartners = new SliderCarousel({
+            main: '#companies',
+            wrap: '.companies-hor', 
+            slidesToShow: 4,
+            infinity: true,
+
+            responsive: [{
+                breakpoint: 1024,
+                slidesToShow: 3,
+            },
+            {
+                breakpoint: 768,
+                slidesToShow: 2,
+            },
+            {
+                breakpoint: 576,
+                slidesToShow: 1,
+            }]
+        })
+        carouselPartners.init();
+</script>
 
 
 </body>
